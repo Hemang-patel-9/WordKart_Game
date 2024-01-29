@@ -5,10 +5,10 @@ const arr = [
   "keyboard",
   "holiday",
   "computer",
-  "nostrils","colorless","aligator","volume","stickers","pokemon","range","borex","exit","rust","iron","micro","train","dogs","vacume","station","moon","bright","lilith","lump","split","swing","dump","boron","marathon","physics","pyramid","iconic","nails","stable","bathroom","socking","sink","leopard","dove","lizard","napkin","cousion","telephone","rice","elevator","wallpaper","eyes","tree"
+  "nostrils","colorless","aligator","volume","stickers","pokemon","range","borex","exit","rust","iron","micro","train","dogs","vacume","station","moon","bright","lilith","lump","split","swing","dumb","boron","marathon","physics","pyramid","iconic","nails","stable","bathroom","socking","sink","leopard","dove","lizard","napkin","cousion","telephone","rice","elevator","wallpaper","eyes","tree"
 ];
 const hint = ["Name of Subject related to liquid.","Name of food who grew up in cold area.","Synonyms to digit.","Computer input part.","What is on Sunday?","Technological instrument.","you breath in and out by which holes?","Synonyms of acrometics or neutral.","Water animal who is cold-blooded and powerful mouth.","volume.","a piece of paper with writing or a picture on one side that you can stick onto something","Name of anime.","some perticuler area called.","Used in carrom board probably once in game.","The act of leaving something.","related to decomposition of metal or decay.","The part of hemoglobin","The small particles unit.","The huge vihicle of travelling","One of the loyal animal","just total empty place","the place or position in which something or someone stands or is assigned to stand or remain.","Major reason of tide",
-"Shining or Clear meterial","Religion signifies the demons.","A swelling under the skin","To seperate By.","Children playing a lot with this instrument in garden.","Moron","5th Element of Periodic table","Related to race","Subject related to Atom","Largest shape with flat surface and 5 total sides.","Generally restricted to more recent, influential or unique","Some body dead cells stored on this part.","Synonym of concious","The place of relaxing and resting in some of the cases.","Type of Expression related to surprise","A bowl-shaped plumbing fixture for washing hands, dishwashing, and other purposes","Animals who runs fast which body color yellow.","Name of famous brand of soap which name is like bird.","Scientfic name is Lacertilia.","a type of cloth who used to clean something","similer to pillows","grahambel's invention.","Known as white gold in india.","kind of lift in buildings","Background of Mobile phone.","body part which is in pair.","The enemy of oxygen at night."];
+"Shining or Clear meterial","Religion signifies the demons.","A swelling under the skin","To seperate By.","Children playing a lot with this instrument in garden.","Moron","5th Element of Periodic table","Related to race","Subject related to Atom","Largest shape with flat surface and 5 total sides.","Generally restricted to more recent, influential or unique","Some body dead cells stored on this part.","Synonym of concious","The place of relaxing and resting in some of the cases.","Type of Expression related to surprise","A bowl-shaped plumbing fixture for washing hands, dishwashing, and other purposes","Animals who runs fast which body color yellow.","Name of famous brand of soap which name is like bird.","Scientfic name is Lacertilia.","a type of cloth which used to clean something","similer to pillows","grahambel's invention.","Known as white gold in india.","kind of lift in buildings","Background of Mobile phone.","body part which is in pair.","The enemy of oxygen at night."];
 
 //needed variables
 let x;
@@ -68,13 +68,38 @@ function MakeRowsCols(word) {
       input.classList.add("getInput");
       parent.appendChild(input);
       input.setAttribute("id", `${x}${y}`);
+      input.addEventListener("change",validInput);
       sbutton.setAttribute("id", Number.parseInt(x));
+      sbutton.setAttribute("autocomplete", "off");
     }
     parent.append(sbutton);
     let row = document.createElement("br");
     parent.appendChild(row);
   }
   GetInputWords();
+}
+function validInput()
+{
+  let a;
+  let b;
+
+  // alert(word.length)
+  for(a=1;a<=word.length;a++)
+  {
+    for(b=1;b<=word.length;b++)
+    {
+      a=Number.parseInt(a);
+      b=Number.parseInt(b);
+      
+      let val=document.getElementById(`${a}${b}`).value;
+      isLength=Number.parseInt(val.length);
+      if(isLength>1)
+      {
+        alert('noonononon');
+        // alert(isLength[0]);
+      }
+    }
+  }
 }
 function GetInputWords() {
   for (let w = 1; w <= word.length; w++) {
